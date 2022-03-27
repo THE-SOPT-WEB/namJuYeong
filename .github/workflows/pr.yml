@@ -1,0 +1,17 @@
+on: pull_request
+
+jobs:
+  example_comment_pr:
+    runs-on: ubuntu-latest
+    name: An example job to comment a PR
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Comment Pull Request
+        uses: thollander/actions-comment-pull-request@v1.1.0
+
+
+        with:
+          message: '오늘도 할할놀놀을 몸소 실천 중인 웹파트원 ! 화이팅 :) <br> <a href="https://www.notion.so/q-bit/37d31c0aec0b46fc9a8c9b194dab788a">과제 레퍼런스</a> 참고해서 빠트린 부분은 없는 지 체크해볼까요?'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
