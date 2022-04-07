@@ -1,6 +1,6 @@
 ![KakaoTalk_Photo_2022-04-02-16-50-25](https://user-images.githubusercontent.com/73823388/161372914-30019d7b-8365-498b-99ce-a72a6497de0f.png)
 
-## 커밋 컨벤션
+### 커밋 컨벤션
 `기능(feat)`: 새로운 기능을 추가  
 `버그(fix)`: 버그 수정  
 `리팩토링(refactor)`: 코드 리팩토링  
