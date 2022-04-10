@@ -148,9 +148,10 @@ body {
   margin-bottom: 10px;
 }
 .cart__sum-title {
-  margin-top: 10px;
+  padding-top: 10px;
   margin-bottom: 5px;
   font-size: 20px;
+  border-top: 1px solid black;
 }
 .cart__sum {
   margin-bottom: 5px;
@@ -159,10 +160,11 @@ body {
   content: "원";
 }
 .cart__button-wrapper {
-  margin-top: 10px;
+  padding-top: 10px;
   display: flex;
   justify-content: center;
   gap: 10px;
+  border-top: 1px solid black;
 }
 .cart__button-wrapper > button {
   background-color: orange;

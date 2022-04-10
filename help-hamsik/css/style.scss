@@ -163,9 +163,10 @@ body {
     margin-bottom: 10px;
   }
   &__sum-title {
-    margin-top: 10px;
+    padding-top: 10px;
     margin-bottom: 5px;
     font-size: 20px;
+    border-top: 1px solid black;
   }
   &__sum {
     margin-bottom: 5px;
@@ -174,10 +175,11 @@ body {
     content: "원";
   }
   &__button-wrapper {
-    margin-top: 10px;
+    padding-top: 10px;
     display: flex;
     justify-content: center;
     gap: 10px;
+    border-top: 1px solid black;
     & > button {
       background-color: orange;
       padding: 10px;
