@@ -1,0 +1,216 @@
+@font-face {
+  font-family: "DungGeunMo";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --black-color: #333a3f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  font-family: "DungGeunMo";
+  box-sizing: border-box;
+}
+button {
+  background: none;
+  border: 0;
+}
+
+body {
+  background-color: antiquewhite;
+}
+.header {
+  position: relative;
+  background-image: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    navy,
+    purple
+  );
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+  &__title {
+    white-space: nowrap;
+  }
+  &__title-summary {
+    display: none;
+  }
+}
+
+.nav-top {
+  position: absolute;
+  font-size: 13px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  top: 5px;
+  left: 10px;
+  & > * {
+    min-width: 70px;
+  }
+}
+
+.main {
+  padding: 20px 20px;
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.nav {
+  padding: 15px;
+  background-color: white;
+  border-radius: 20px;
+  min-width: 170px;
+  &__title {
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 20px;
+  }
+  &__button-wrapper {
+    display: grid;
+    row-gap: 5px;
+  }
+  &__button {
+    padding: 5px;
+    border-radius: 20px;
+    background-color: rgb(236, 236, 236);
+    color: var(--black-color);
+    &[class$="--active"] {
+      background-color: orange;
+      color: white;
+    }
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgb(189, 255, 58);
+  transition: all ease 1s;
+  min-width: 300px;
+  z-index: 100;
+  &:hover {
+    background-color: rgb(255, 43, 255);
+    color: white;
+    transform: scale(1.5);
+    z-index: 200;
+  }
+  &__img {
+    width: 120px;
+    object-fit: cover;
+    align-self: center;
+    justify-self: center;
+  }
+  &__info {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 5px;
+  }
+  &__title {
+    font-size: 25px;
+    background: linear-gradient(
+      45deg,
+      red,
+      orange,
+      yellow,
+      green,
+      blue,
+      navy,
+      purple
+    );
+    color: transparent;
+    -webkit-background-clip: text;
+  }
+  &__price::after {
+    content: "원";
+  }
+}
+
+.cart {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  min-width: 300px;
+  &__title {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  &__sum-title {
+    padding-top: 10px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    border-top: 1px solid black;
+  }
+  &__sum {
+    margin-bottom: 5px;
+  }
+  &__sum::after {
+    content: "원";
+  }
+  &__button-wrapper {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border-top: 1px solid black;
+    & > button {
+      background-color: orange;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .main {
+    grid-template-columns: 4fr 2fr;
+  }
+  .nav {
+    display: none;
+  }
+  .nav-top {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .header__title {
+    display: none;
+  }
+  .header__title-summary {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
