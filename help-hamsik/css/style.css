@@ -171,6 +171,36 @@ body {
   padding: 10px;
   border-radius: 10px;
 }
+.cart__burger-list {
+  list-style: none;
+}
+.cart__burger {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+.cart__burger > *:not(button) {
+  width: 100%;
+}
+.cart__burger > *:nth-child(1) {
+  flex-basis: 50%;
+}
+.cart__burger > *:nth-child(2) {
+  flex-basis: 10%;
+}
+.cart__burger > *:nth-child(3) {
+  flex-basis: 30%;
+  text-align: center;
+}
+.cart__burger > *:nth-child(4) {
+  background-color: rgb(255, 43, 255);
+  flex-basis: auto;
+  width: 24px;
+  height: 22px;
+  border-radius: 12px;
+}
 
 @media screen and (max-width: 1200px) {
   .main {

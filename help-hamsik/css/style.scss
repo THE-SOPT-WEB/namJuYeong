@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "DungGeunMo";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff")
-    format("woff");
+  font-family: 'DungGeunMo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +14,7 @@
   padding: 0;
   font: inherit;
   color: inherit;
-  font-family: "DungGeunMo";
+  font-family: 'DungGeunMo';
   box-sizing: border-box;
 }
 button {
@@ -88,7 +88,7 @@ body {
     border-radius: 20px;
     background-color: rgb(236, 236, 236);
     color: var(--black-color);
-    &[class$="--active"] {
+    &[class$='--active'] {
       background-color: orange;
       color: white;
     }
@@ -147,7 +147,7 @@ body {
     -webkit-background-clip: text;
   }
   &__price::after {
-    content: "원";
+    content: '원';
   }
 }
 
@@ -172,7 +172,7 @@ body {
     margin-bottom: 5px;
   }
   &__sum::after {
-    content: "원";
+    content: '원';
   }
   &__button-wrapper {
     padding-top: 10px;
@@ -184,6 +184,36 @@ body {
       background-color: orange;
       padding: 10px;
       border-radius: 10px;
+    }
+  }
+  &__burger-list {
+    list-style: none;
+  }
+  &__burger {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    & > *:not(button) {
+      width: 100%;
+    }
+    & > *:nth-child(1) {
+      flex-basis: 50%;
+    }
+    & > *:nth-child(2) {
+      flex-basis: 10%;
+    }
+    & > *:nth-child(3) {
+      flex-basis: 30%;
+      text-align: center;
+    }
+    & > *:nth-child(4) {
+      background-color: rgb(255, 43, 255);
+      flex-basis: auto;
+      width: 24px;
+      height: 22px;
+      border-radius: 12px;
     }
   }
 }
