@@ -204,6 +204,7 @@ body {
 }
 
 .modal-background {
+  visibility: hidden;
   z-index: 300;
   position: fixed;
   top: 0;
@@ -229,16 +230,41 @@ body {
   font-size: 20px;
   padding-bottom: 15px;
 }
-.modal__button-wrapper > button {
+.modal__button-wrapper {
+  display: flex;
+  gap: 5px;
+}
+.modal__button-wrapper > * {
   width: 60px;
   border-radius: 10px;
   padding: 5px 0;
 }
-.modal__button-wrapper > button:first-child {
+.modal__button-wrapper > a {
+  display: block;
+  text-align: center;
   background-color: rgb(175, 252, 255);
+  text-decoration: none;
+  outline: none;
 }
-.modal__button-wrapper > button:last-child {
+.modal__button-wrapper > button {
   background-color: rgb(255, 154, 154);
+}
+
+.finish {
+  visibility: hidden;
+  z-index: 300;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  background-color: greenyellow;
 }
 
 @media screen and (max-width: 1200px) {
@@ -269,4 +295,4 @@ body {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */

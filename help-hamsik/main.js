@@ -9,6 +9,9 @@ const orderButton = document.querySelector(
 const cancelButton = document.querySelector(
   '.cart__button-wrapper > button:last-child'
 );
+const modalDiv = document.querySelector('.modal-background');
+const modalYesButton = document.querySelector('.modal__button-wrapper > a');
+const modalNoButton = document.querySelector('.modal__button-wrapper > button');
 
 let addedBurgerList = [];
 
@@ -103,8 +106,12 @@ const cancelOrder = () => {
   setSum();
 };
 
-const onClickOrderButton = () => {};
+const openModal = () => {
+  modalDiv.style.visibility = 'visible';
+  body.style.overflow = 'hidden';
+};
 
 cardListUl.addEventListener('click', onClickBurger);
 cancelButton.addEventListener('click', cancelOrder);
-orderButton.addEventListener('click', onClickOrderButton);
+orderButton.addEventListener('click', openModal);
+// modalYesButton.addEventListener('click')
