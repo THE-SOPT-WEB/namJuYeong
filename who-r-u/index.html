@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>누구세요?</title>
+  </head>
+  <body>
+    <header>
+      <h1>누구세요?</h1>
+    </header>
+    <main>
+      <section class="scoreBoard">
+        <span class="scoreBoard__score">0</span>
+        <span>점</span>
+      </section>
+      <div class="imageBoard">
+        <img src="" alt="who is this?" />
+      </div>
+      <div class="answer">
+        <header class="answer__title">
+          <h2>이 친구는 누구일까요?</h2>
+        </header>
+        <ul class="answer__list">
+          <li>서혜은</li>
+          <li>황주희</li>
+          <li>김규민</li>
+          <li>백지연</li>
+          <li>전희선</li>
+        </ul>
+      </div>
+      <hr />
+      <div class="buttonList">
+        <button class="buttonList__shuffle">다시하기</button>
+      </div>
+    </main>
+    <div class="modal hide">
+      <div class="modal__content">
+        <p class="modal__body"></p>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
