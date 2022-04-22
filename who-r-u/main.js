@@ -11,6 +11,7 @@ const imageBoard = document.querySelector('.imageBoard > img');
 const scoreDiv = document.querySelector('.scoreBoard__score');
 const modalDiv = document.querySelector('.modal');
 const modalBodyDiv = modalDiv.querySelector('p');
+const restartButton = document.querySelector('.buttonList__shuffle');
 
 let orderIndex = [0, 1, 2, 3, 4];
 let currentStep = -1;
@@ -46,6 +47,7 @@ const setNextStep = () => {
 };
 
 const startGame = () => {
+  scoreDiv.innerText = 0;
   answerListUl.addEventListener('click', onClickAnswerList);
   currentStep = -1;
   shuffleOrder();
@@ -61,7 +63,10 @@ const showModal = (text) => {
 const checkAnswer = (name) => {
   if (name === quizList[orderIndex[currentStep]].answer) {
     if (currentStep < 4) setNextStep();
-    else answerListUl.removeEventListener('click', onClickAnswerList);
+    else {
+      answerListUl.removeEventListener('click', onClickAnswerList);
+      showModal('게임 끝');
+    }
     scoreDiv.innerText = Number(scoreDiv.innerText) + 1;
   } else {
     showModal('틀렸다리');
@@ -73,4 +78,5 @@ const onClickAnswerList = (e) => {
   checkAnswer(e.target.innerText);
 };
 
+restartButton.addEventListener('click', startGame);
 startGame();
