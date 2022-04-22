@@ -25,6 +25,7 @@ button {
 
 body {
   background-color: antiquewhite;
+  position: relative;
 }
 
 .header {
@@ -200,6 +201,44 @@ body {
   width: 24px;
   height: 22px;
   border-radius: 12px;
+}
+
+.modal-background {
+  z-index: 300;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal__question {
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+.modal__button-wrapper > button {
+  width: 60px;
+  border-radius: 10px;
+  padding: 5px 0;
+}
+.modal__button-wrapper > button:first-child {
+  background-color: rgb(175, 252, 255);
+}
+.modal__button-wrapper > button:last-child {
+  background-color: rgb(255, 154, 154);
 }
 
 @media screen and (max-width: 1200px) {

@@ -3,6 +3,9 @@
 const cardListUl = document.querySelector('.card-list');
 const cartBurgerListUl = document.querySelector('.cart__burger-list');
 const cartSumDiv = document.querySelector('.cart__sum');
+const orderButton = document.querySelector(
+  '.cart__button-wrapper > button:first-child'
+);
 const cancelButton = document.querySelector(
   '.cart__button-wrapper > button:last-child'
 );
@@ -100,5 +103,8 @@ const cancelOrder = () => {
   setSum();
 };
 
+const onClickOrderButton = () => {};
+
 cardListUl.addEventListener('click', onClickBurger);
 cancelButton.addEventListener('click', cancelOrder);
+orderButton.addEventListener('click', onClickOrderButton);
