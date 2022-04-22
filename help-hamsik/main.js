@@ -2,6 +2,7 @@
 
 const cardListUl = document.querySelector('.card-list');
 const cartBurgerListUl = document.querySelector('.cart__burger-list');
+const cartSumDiv = document.querySelector('.cart__sum');
 
 let addedBurgerList = [];
 
@@ -24,6 +25,9 @@ const getBurgerFromInnerText = (innerText) => {
 const plusBurger = (id) => {
   const burgerEl = document.getElementById(`burger-${id}`);
   burgerEl.children[1].value = Number(burgerEl.children[1].value) + 1;
+  addedBurgerList = addedBurgerList.map((burger) =>
+    burger.id === id ? { ...burger, quantity: burger.quantity + 1 } : burger
+  );
 };
 
 const deleteBurger = (burgerEl) => {
@@ -32,6 +36,7 @@ const deleteBurger = (burgerEl) => {
   );
   burgerEl.remove();
   // saveCart();
+  setSum();
 };
 
 const renderNewBurger = (newBurger) => {
@@ -56,13 +61,20 @@ const renderNewBurger = (newBurger) => {
 };
 
 const addNewBurger = (newBurger) => {
-  addedBurgerList.push(newBurger);
+  addedBurgerList.push({ ...newBurger, quantity: 1 });
   renderNewBurger(newBurger);
 };
 
 // const saveCart = () => {
-//   // 미완
+//   // 심화 과제
 // };
+
+const setSum = () => {
+  console.log(addedBurgerList);
+  cartSumDiv.innerText = addedBurgerList
+    .reduce((sum, burger) => sum + burger.quantity * burger.price, 0)
+    .toLocaleString();
+};
 
 const onClickBurger = (e) => {
   let el = e.target;
@@ -75,7 +87,7 @@ const onClickBurger = (e) => {
     plusBurger(burger.id);
   else addNewBurger(burger);
   // saveCart();
-  // 합계 더해주기
+  setSum();
 };
 
 cardListUl.addEventListener('click', onClickBurger);
