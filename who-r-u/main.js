@@ -9,6 +9,8 @@ import pic5 from './assets/백지연.png';
 const answerListUl = document.querySelector('.answer__list');
 const imageBoard = document.querySelector('.imageBoard > img');
 const scoreDiv = document.querySelector('.scoreBoard__score');
+const modalDiv = document.querySelector('.modal');
+const modalBodyDiv = modalDiv.querySelector('p');
 
 let orderIndex = [0, 1, 2, 3, 4];
 let currentStep = -1;
@@ -45,8 +47,15 @@ const setNextStep = () => {
 
 const startGame = () => {
   answerListUl.addEventListener('click', onClickAnswerList);
+  currentStep = -1;
   shuffleOrder();
   setNextStep();
+};
+
+const showModal = (text) => {
+  modalBodyDiv.innerText = text;
+  modalDiv.classList.remove('hide');
+  setTimeout(() => modalDiv.classList.add('hide'), 1500);
 };
 
 const checkAnswer = (name) => {
@@ -54,6 +63,8 @@ const checkAnswer = (name) => {
     if (currentStep < 4) setNextStep();
     else answerListUl.removeEventListener('click', onClickAnswerList);
     scoreDiv.innerText = Number(scoreDiv.innerText) + 1;
+  } else {
+    showModal('틀렸다리');
   }
 };
 
