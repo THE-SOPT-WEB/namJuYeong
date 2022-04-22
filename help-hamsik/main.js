@@ -10,7 +10,6 @@ const cancelButton = document.querySelector(
   '.cart__button-wrapper > button:last-child'
 );
 const modalDiv = document.querySelector('.modal-background');
-const modalYesButton = document.querySelector('.modal__button-wrapper > a');
 const modalNoButton = document.querySelector('.modal__button-wrapper > button');
 
 let addedBurgerList = [];
@@ -111,7 +110,12 @@ const openModal = () => {
   body.style.overflow = 'hidden';
 };
 
+const closeModal = () => {
+  modalDiv.style.visibility = 'hidden';
+  body.style.overflow = 'visible';
+};
+
 cardListUl.addEventListener('click', onClickBurger);
 cancelButton.addEventListener('click', cancelOrder);
 orderButton.addEventListener('click', openModal);
-// modalYesButton.addEventListener('click')
+modalNoButton.addEventListener('click', closeModal);
