@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Help Hamsik</title>
     <link rel="stylesheet" href="css/style.css"></link>
+    <script defer src='main.js'></script>
   </head>
   <body>
     <header class="header">
@@ -23,7 +24,7 @@
           <button class="nav__button">맥도날드</button>
         </div>
       </nav>
-      <section class="cards">
+      <section class="card-list">
         <article class="card">
           <img
             class="card__img"
@@ -219,14 +220,7 @@
       </section>
       <aside class="cart">
         <h3 class="cart__title">장바구니</h3>
-        <ul class="cart__burger-list">
-          <li class="cart__burger">
-            <div>빅맥</div>
-            <input type="number"/>
-            <div>5,000원</div>
-            <button>X</button>
-          </li>
-        </ul>
+        <ul class="cart__burger-list"></ul>
         <div class="cart__sum-title">합계</div>
         <div class="cart__sum">0</div>
         <div class="cart__button-wrapper">
