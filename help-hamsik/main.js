@@ -3,6 +3,9 @@
 const cardListUl = document.querySelector('.card-list');
 const cartBurgerListUl = document.querySelector('.cart__burger-list');
 const cartSumDiv = document.querySelector('.cart__sum');
+const cancelButton = document.querySelector(
+  '.cart__button-wrapper > button:last-child'
+);
 
 let addedBurgerList = [];
 
@@ -70,7 +73,6 @@ const addNewBurger = (newBurger) => {
 // };
 
 const setSum = () => {
-  console.log(addedBurgerList);
   cartSumDiv.innerText = addedBurgerList
     .reduce((sum, burger) => sum + burger.quantity * burger.price, 0)
     .toLocaleString();
@@ -90,4 +92,13 @@ const onClickBurger = (e) => {
   setSum();
 };
 
+const cancelOrder = () => {
+  addedBurgerList = [];
+  while (cartBurgerListUl.hasChildNodes())
+    cartBurgerListUl.removeChild(cartBurgerListUl.firstChild);
+  // saveCart();
+  setSum();
+};
+
 cardListUl.addEventListener('click', onClickBurger);
+cancelButton.addEventListener('click', cancelOrder);
