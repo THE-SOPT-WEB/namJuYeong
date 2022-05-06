@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "DungGeunMo";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff")
-    format("woff");
+  font-family: 'DungGeunMo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +14,7 @@
   padding: 0;
   font: inherit;
   color: inherit;
-  font-family: "DungGeunMo";
+  font-family: 'DungGeunMo';
   box-sizing: border-box;
 }
 button {
@@ -24,6 +24,7 @@ button {
 
 body {
   background-color: antiquewhite;
+  position: relative;
 }
 .header {
   position: relative;
@@ -88,14 +89,14 @@ body {
     border-radius: 20px;
     background-color: rgb(236, 236, 236);
     color: var(--black-color);
-    &[class$="--active"] {
+    &[class$='--active'] {
       background-color: orange;
       color: white;
     }
   }
 }
 
-.cards {
+.card-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -147,7 +148,7 @@ body {
     -webkit-background-clip: text;
   }
   &__price::after {
-    content: "원";
+    content: '원';
   }
 }
 
@@ -172,7 +173,7 @@ body {
     margin-bottom: 5px;
   }
   &__sum::after {
-    content: "원";
+    content: '원';
   }
   &__button-wrapper {
     padding-top: 10px;
@@ -186,6 +187,100 @@ body {
       border-radius: 10px;
     }
   }
+  &__burger-list {
+    list-style: none;
+  }
+  &__burger {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    & > *:not(button) {
+      width: 100%;
+    }
+    & > *:nth-child(1) {
+      flex-basis: 50%;
+    }
+    & > *:nth-child(2) {
+      flex-basis: 10%;
+    }
+    & > *:nth-child(3) {
+      flex-basis: 30%;
+      text-align: center;
+    }
+    & > *:nth-child(4) {
+      background-color: rgb(255, 43, 255);
+      flex-basis: auto;
+      width: 24px;
+      height: 22px;
+      border-radius: 12px;
+    }
+  }
+}
+
+.modal-background {
+  visibility: hidden;
+  z-index: 300;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__question {
+    font-size: 20px;
+    padding-bottom: 15px;
+  }
+  &__button-wrapper {
+    display: flex;
+    gap: 5px;
+    & > * {
+      width: 60px;
+      border-radius: 10px;
+      padding: 5px 0;
+    }
+    & > a {
+      display: block;
+      text-align: center;
+      background-color: rgb(175, 252, 255);
+      text-decoration: none;
+      outline: none;
+    }
+    & > button {
+      background-color: rgb(255, 154, 154);
+    }
+  }
+}
+
+.finish {
+  visibility: hidden;
+  z-index: 300;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  background-color: greenyellow;
 }
 
 @media screen and (max-width: 1200px) {
