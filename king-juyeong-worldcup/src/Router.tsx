@@ -9,7 +9,7 @@ export default function Router() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/game" element={<Game />} />
-      <Route path="/result" element={<Result />} />
+      <Route path="/result/:name" element={<Result />} />
     </Routes>
   );
 }
