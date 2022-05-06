@@ -57,7 +57,6 @@ export default function Game() {
   }, [fighterList]);
 
   useEffect(() => {
-    console.log(winnerList);
     if (round === 2) navigate(`/result/${winnerList[0].name}`);
   }, [winnerList]);
 
