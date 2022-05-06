@@ -98,6 +98,12 @@ const StGame = styled.div`
       text-align: center;
       font-size: 80px;
     }
+    & > div {
+      width: 100%;
+      text-align: center;
+      font-size: 40px;
+      margin-top: 20px;
+    }
   }
   & > main {
     position: relative;
