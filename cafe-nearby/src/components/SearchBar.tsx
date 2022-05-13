@@ -35,7 +35,7 @@ export default function SearchBar(props: SearchBarProps) {
           value={searchWord}
           onChange={(e) => setSearchWord(e.target.value)}
           placeholder="현재 위치를 입력해주세요."
-          disabled={isAutoPosition}
+          readOnly={isAutoPosition}
         />
         <button>검색</button>
       </form>
